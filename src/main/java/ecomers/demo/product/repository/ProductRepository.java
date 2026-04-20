@@ -8,9 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.List;
-
-
 public interface ProductRepository extends JpaRepository<Product, Long> {
     Page<Product> findByActiveTrueAndCategoryId(Long categoryId, Pageable pageable);
 
@@ -22,6 +19,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Page<Product>search(@Param("q") String query, Pageable pageable);
 
     Page<Product> findByActiveTrue(Pageable pageable);
-
 
 }
